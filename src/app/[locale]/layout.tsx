@@ -6,6 +6,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { ReactNode } from 'react';
 import './../globals.css';
+import LocaleSwitcher from '@/components/LocaleSwitcher';
 
 type Props = {
   children: ReactNode;
@@ -51,11 +52,12 @@ export default async function LocaleLayout({
         >
           <NextIntlClientProvider>
             <header className=''>
-              <nav className='flex justify-end p-4 border-b'>
+              <nav className='flex justify-end items-center p-4 border-b gap-4'>
+                <LocaleSwitcher />
                 <ThemeModeToggle />
               </nav>
             </header>
-            {children}
+            <main className='p-4'> {children}</main>
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>
