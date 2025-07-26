@@ -7,6 +7,7 @@ import { notFound } from 'next/navigation';
 import { ReactNode } from 'react';
 import './../globals.css';
 import LocaleSwitcher from '@/components/LocaleSwitcher';
+import Container from '@/components/Container';
 
 type Props = {
   children: ReactNode;
@@ -51,13 +52,17 @@ export default async function LocaleLayout({
           disableTransitionOnChange
         >
           <NextIntlClientProvider>
-            <header className=''>
-              <nav className='flex justify-end items-center p-4 border-b gap-4'>
-                <LocaleSwitcher />
-                <ThemeModeToggle />
-              </nav>
+            <header className='border-b'>
+              <Container>
+                <nav className='flex justify-end items-center gap-4'>
+                  <LocaleSwitcher />
+                  <ThemeModeToggle />
+                </nav>
+              </Container>
             </header>
-            <main className='p-4'> {children}</main>
+            <main className=''>
+              <Container>{children}</Container>
+            </main>
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>
