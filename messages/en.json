@@ -1,7 +1,9 @@
 {
   "HomePage": {
-    "title": "Hello world!",
-    "about": "Go to the about page"
+    "title": "Hello world!"
+  },
+  "Navigation": {
+    "about": "About the App"
   },
   "LocaleLayout": {
     "title": "BG 108"
@@ -9,5 +11,23 @@
   "LocaleSwitcher": {
     "label": "Change language",
     "locale": "{locale, select, ru {🇷🇺 Russian} en {🇺🇸 English} other {Unknown}}"
+  },
+  "AboutPage": {
+    "title": "About the App",
+    "description": "BG 108 is a simple app for studying verses from Bhagavad-gita.",
+    "featuresTitle": "Features",
+    "featuresGuide": [
+      {
+        "title": "Theme switching (light/dark mode)",
+        "description": "Use the button in the header to change the theme."
+      },
+      {
+        "title": "Language switching (localization)",
+        "description": "Use the language selector to switch between English and Russian."
+      }
+    ]
+  },
+  "Logo": {
+    "text": "BG 108"
   }
 }

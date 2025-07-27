@@ -1,4 +1,3 @@
-import { ThemeModeToggle } from '@/components/theme-mode-toggle';
 import { ThemeProvider } from '@/components/theme-provider';
 import { routing } from '@/i18n/routing';
 import { Locale, NextIntlClientProvider, hasLocale } from 'next-intl';
@@ -6,8 +5,10 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { ReactNode } from 'react';
 import './../globals.css';
-import LocaleSwitcher from '@/components/LocaleSwitcher';
 import Container from '@/components/Container';
+import Navigation from '@/components/Navigation';
+import LocaleSwitcher from '@/components/LocaleSwitcher';
+import { ThemeModeToggle } from '@/components/theme-mode-toggle';
 
 type Props = {
   children: ReactNode;
@@ -54,10 +55,16 @@ export default async function LocaleLayout({
           <NextIntlClientProvider>
             <header className='border-b'>
               <Container>
-                <nav className='flex justify-end items-center gap-4'>
-                  <LocaleSwitcher />
-                  <ThemeModeToggle />
-                </nav>
+                <div className='flex justify-between items-center'>
+                  <Navigation />
+                  <div
+                    className='flex items-center gap-4'
+                    aria-label='Site preferences'
+                  >
+                    <LocaleSwitcher aria-label='Change language' />
+                    <ThemeModeToggle aria-label='Toggle theme' />
+                  </div>
+                </div>
               </Container>
             </header>
             <main className=''>
