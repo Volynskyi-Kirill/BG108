@@ -9,5 +9,20 @@
   "LocaleSwitcher": {
     "label": "Change language",
     "locale": "{locale, select, ru {🇷🇺 Russian} en {🇺🇸 English} other {Unknown}}"
+  },
+  "AboutPage": {
+    "title": "About the App",
+    "description": "BG 108 is a simple app for reading and exploring the Bhagavad-gita.",
+    "featuresTitle": "Features",
+    "featuresGuide": [
+      {
+        "title": "Theme switching (light/dark mode)",
+        "description": "Use the button in the header to change the theme."
+      },
+      {
+        "title": "Language switching (localization)",
+        "description": "Use the language selector to switch between English and Russian."
+      }
+    ]
   }
 }
