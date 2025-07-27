@@ -1,5 +1,6 @@
+import { Link } from '@/i18n/navigation';
+import { URLS } from '@/lib/constants';
 import React from 'react';
-import Link from 'next/link';
 
 interface Shloka {
   sanskrit: string;
@@ -9,7 +10,6 @@ interface Shloka {
 
 interface ShlokaListProps {
   shlokas: Record<string, Shloka>;
-  locale: string;
 }
 
 const getFirstLine = (text: string) => {
@@ -17,17 +17,14 @@ const getFirstLine = (text: string) => {
   return firstLine;
 };
 
-export const ShlokaList: React.FC<ShlokaListProps> = ({ shlokas, locale }) => {
+export const ShlokaList: React.FC<ShlokaListProps> = ({ shlokas }) => {
   return (
-    <div
-      className='shloka-list'
-      style={{ display: 'flex', flexDirection: 'column', gap: 16 }}
-    >
+    <div className='flex flex-col gap-4'>
       {Object.entries(shlokas).map(([shlokaNumber, shloka]) => (
         <div key={shlokaNumber} className='shloka-card'>
           <div className='shloka-number'>{shlokaNumber}</div>
           <Link
-            href={`/${locale}/shloka/${shlokaNumber}`}
+            href={URLS.SHLOKA(shlokaNumber)}
             className='shloka-link'
             prefetch={false}
           >

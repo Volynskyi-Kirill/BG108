@@ -15,7 +15,7 @@ export default function HomePage({ params }: Props) {
 
   return (
     <div>
-      <ShlokaList shlokas={shlokas} locale={locale} />
+      <ShlokaList shlokas={shlokas} />
     </div>
   );
 }
