@@ -1,6 +1,8 @@
-import { Locale, useTranslations } from 'next-intl';
+import { Locale } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { use } from 'react';
+import ShlokaList from '../../components/ShlokaList';
+import shlokas from '../../../public/data/shlokas-ru.json';
 
 type Props = {
   params: Promise<{ locale: Locale }>;
@@ -11,11 +13,9 @@ export default function HomePage({ params }: Props) {
 
   setRequestLocale(locale);
 
-  const t = useTranslations('HomePage');
-
   return (
     <div>
-      <h1>{t('title')}</h1>
+      <ShlokaList shlokas={shlokas} locale={locale} />
     </div>
   );
 }
