@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
+//TODO localization!
+
 interface WordByWordSectionProps {
   wordByWord: string;
 }
@@ -13,21 +15,33 @@ function parseWordByWord(text: string) {
     .split(';')
     .map((part) => {
       const trimmed = part.trim();
-      // Ищем санскритское слово до первого тире
-      const match = trimmed.match(/^([^—-]+)[\s]*[—-][\s]*(.+)$/);
 
-      if (match) {
+      // Ищем разделитель " — " (пробел-тире-пробел) между санскритом и переводом
+      const separatorIndex = trimmed.indexOf(' — ');
+
+      if (separatorIndex !== -1) {
         return {
-          sanskrit: match[1].trim(),
-          translation: match[2].trim(),
+          sanskrit: trimmed.substring(0, separatorIndex).trim(),
+          translation: trimmed.substring(separatorIndex + 3).trim(), // +3 для " — "
         };
       }
 
-      return null;
+      // Если не найден " — ", пробуем обычное тире с пробелами
+      const dashMatch = trimmed.match(/^(.+?)\s+—\s+(.+)$/);
+      if (dashMatch) {
+        return {
+          sanskrit: dashMatch[1].trim(),
+          translation: dashMatch[2].trim(),
+        };
+      }
+
+      // Если не найден разделитель, возможно это просто перевод без санскрита
+      return {
+        sanskrit: '',
+        translation: trimmed,
+      };
     })
-    .filter(
-      (item): item is { sanskrit: string; translation: string } => item !== null
-    );
+    .filter((item) => item.translation.length > 0); // Убираем пустые переводы
 }
 
 export default function WordByWordSection({
@@ -57,16 +71,16 @@ export default function WordByWordSection({
             {wordByWordParsed.map((item, index) => (
               <div
                 key={index}
-                className='flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4 p-3 rounded-lg bg-muted/30'
+                className='flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-2 p-3 rounded-lg bg-muted/30'
               >
-                {/* Санскритское слово */}
                 <div className='flex-shrink-0'>
                   <span className='inline-block px-2 py-1 bg-primary/10 text-primary font-medium text-sm rounded border'>
                     {item.sanskrit}
                   </span>
                 </div>
 
-                {/* Перевод */}
+                <div className='hidden sm:block text-muted-foreground'>—</div>
+
                 <div className='flex-1 text-sm text-muted-foreground leading-relaxed'>
                   {item.translation}
                 </div>
