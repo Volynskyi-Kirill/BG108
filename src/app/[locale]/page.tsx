@@ -1,8 +1,9 @@
+import ShlokaList from '@/components/ShlokaList';
 import { Locale } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { use } from 'react';
-import ShlokaList from '@/components/ShlokaList';
 
+//TODO move to next-intl? 
 async function getShlokasByLocale(locale: string) {
   switch (locale) {
     case 'en':
