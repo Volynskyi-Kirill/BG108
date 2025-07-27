@@ -23,11 +23,7 @@ export const ShlokaList: React.FC<ShlokaListProps> = ({ shlokas }) => {
       {Object.entries(shlokas).map(([shlokaNumber, shloka]) => (
         <div key={shlokaNumber} className='shloka-card'>
           <div className='shloka-number'>{shlokaNumber}</div>
-          <Link
-            href={URLS.SHLOKA(shlokaNumber)}
-            className='shloka-link'
-            prefetch={false}
-          >
+          <Link href={URLS.SHLOKA(shlokaNumber)} className='shloka-link'>
             {getFirstLine(shloka.sanskrit)}
           </Link>
         </div>
