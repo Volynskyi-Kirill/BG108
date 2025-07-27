@@ -1,4 +1,5 @@
 export const URLS = {
-	HOME: "/",
-	ABOUT: "/about"
-}
+  HOME: '/',
+  ABOUT: '/about',
+  SHLOKA: (shlokaNumber: string) => `/shloka/${shlokaNumber}`,
+};

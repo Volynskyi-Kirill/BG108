@@ -1,6 +1,18 @@
-import { Locale, useTranslations } from 'next-intl';
+import ShlokaList, { ShlokaCollection } from '@/components/ShlokaList';
+import { Locale } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { use } from 'react';
+
+//TODO move to next-intl?
+export async function getShlokasByLocale(locale: string): Promise<ShlokaCollection> {
+  switch (locale) {
+    case 'en':
+      return (await import('@data/shlokas-eng.json')).default;
+    case 'ru':
+    default:
+      return (await import('@data/shlokas-ru.json')).default;
+  }
+}
 
 type Props = {
   params: Promise<{ locale: Locale }>;
@@ -11,11 +23,11 @@ export default function HomePage({ params }: Props) {
 
   setRequestLocale(locale);
 
-  const t = useTranslations('HomePage');
+  const shlokas = use(getShlokasByLocale(locale));
 
   return (
     <div>
-      <h1>{t('title')}</h1>
+      <ShlokaList shlokas={shlokas} />
     </div>
   );
 }
