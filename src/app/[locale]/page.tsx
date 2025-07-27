@@ -1,18 +1,8 @@
-import ShlokaList, { ShlokaCollection } from '@/components/ShlokaList';
+import ShlokaList from '@/components/ShlokaList';
+import { getShlokasByLocale } from '@/lib/get-shlokas-by-locale';
 import { Locale } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 import { use } from 'react';
-
-//TODO move to next-intl?
-export async function getShlokasByLocale(locale: string): Promise<ShlokaCollection> {
-  switch (locale) {
-    case 'en':
-      return (await import('@data/shlokas-eng.json')).default;
-    case 'ru':
-    default:
-      return (await import('@data/shlokas-ru.json')).default;
-  }
-}
 
 type Props = {
   params: Promise<{ locale: Locale }>;

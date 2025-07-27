@@ -1,8 +1,8 @@
 import type { Locale } from 'next-intl';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
-import { getShlokasByLocale } from '../../page';
 import WordByWordSection from './word-by-word-section';
+import { getShlokasByLocale } from '@/lib/get-shlokas-by-locale';
 
 //TODO localization!
 
