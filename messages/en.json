@@ -24,5 +24,8 @@
         "description": "Use the language selector to switch between English and Russian."
       }
     ]
+  },
+  "Logo": {
+    "text": "BG 108"
   }
 }

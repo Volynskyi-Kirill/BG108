@@ -2,6 +2,7 @@ import { Locale, useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { use } from 'react';
 import { setRequestLocale } from 'next-intl/server';
+import { URLS } from '@/lib/constants';
 
 type Props = {
   params: Promise<{ locale: Locale }>;
@@ -13,11 +14,11 @@ export default function HomePage({ params }: Props) {
   setRequestLocale(locale);
 
   const t = useTranslations('HomePage');
-  
+
   return (
     <div>
       <h1>{t('title')}</h1>
-      <Link href='/about'>{t('about')}</Link>
+      <Link href={URLS.ABOUT}>{t('about')}</Link>
     </div>
   );
 }
