@@ -2,10 +2,14 @@ import { Link } from '@/i18n/navigation';
 import { URLS } from '@/lib/constants';
 import React from 'react';
 
-interface Shloka {
+export interface Shloka {
   sanskrit: string;
   wordByWord: string;
   translation: string;
+}
+
+export interface ShlokaCollection {
+  [key: string]: Shloka;
 }
 
 interface ShlokaListProps {
