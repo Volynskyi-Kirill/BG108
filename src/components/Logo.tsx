@@ -9,7 +9,7 @@ export default function Logo() {
     <Link
       href={{ pathname: URLS.HOME }}
       className='font-bold text-lg tracking-tight text-primary hover:opacity-80 transition-opacity duration-200'
-      aria-label={t('text')}
+      aria-label={t('text') + ' — Home'}
     >
       {t('text')}
     </Link>
