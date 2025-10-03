@@ -10,7 +10,7 @@
   },
   "LocaleSwitcher": {
     "label": "Change language",
-    "locale": "{locale, select, ru {🇷🇺 Russian} en {🇺🇸 English} other {Unknown}}"
+    "locale": "{locale, select, ru {Russian} en {🇺🇸 English} other {Unknown}}"
   },
   "AboutPage": {
     "title": "About the App",
