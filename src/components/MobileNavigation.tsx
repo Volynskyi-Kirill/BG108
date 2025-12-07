@@ -17,7 +17,10 @@ import Logo from '@/components/Logo';
 import LocaleSwitcher from '@/components/LocaleSwitcher';
 import { ThemeModeToggle } from '@/components/theme-mode-toggle';
 
-const NAV_LINKS = [{ key: 'about', href: URLS.ABOUT }];
+const NAV_LINKS = [
+  { key: 'profile', href: URLS.PROFILE },
+  { key: 'about', href: URLS.ABOUT },
+];
 
 export default function MobileNavigation() {
   const [isOpen, setIsOpen] = useState(false);

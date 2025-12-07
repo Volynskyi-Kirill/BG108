@@ -3,7 +3,8 @@
     "title": "Привет мир!"
   },
   "Navigation": {
-    "about": "О приложении"
+    "about": "О приложении",
+    "profile": "Профиль"
   },
   "LocaleLayout": {
     "title": "БГ 108"
@@ -29,5 +30,36 @@
   },
   "Logo": {
     "text": "БГ 108"
+  },
+  "Profile": {
+    "title": "Профиль",
+    "description": "Ваши подборки стихов",
+    "myCollections": "Мои подборки"
+  },
+  "Collections": {
+    "addToCollection": "Добавить в подборку",
+    "selectCollection": "Выберите подборку",
+    "createCollection": "Создать подборку",
+    "newCollectionPlaceholder": "Название подборки",
+    "create": "Создать",
+    "cancel": "Отмена",
+    "loading": "Загрузка...",
+    "noCollections": "Нет подборок",
+    "noCollectionsHint": "Добавьте стихи в подборки со страницы стиха",
+    "shlokaCount": "{count, plural, =0 {Пусто} =1 {1 стих} few {# стиха} other {# стихов}}",
+    "collectionNotFound": "Подборка не найдена",
+    "backToProfile": "Назад к профилю",
+    "emptyCollection": "Подборка пуста",
+    "emptyCollectionHint": "Добавьте стихи с главной страницы или страницы стиха",
+    "viewShloka": "Открыть →",
+    "shlokaLabel": "Шлока",
+    "translation": "Перевод",
+    "shlokaNotFound": "Шлока не найдена",
+    "inCollection": "В подборке",
+    "defaultCollections": {
+      "favorites": "Избранные",
+      "learning": "Учить",
+      "learned": "Выученные"
+    }
   }
 }

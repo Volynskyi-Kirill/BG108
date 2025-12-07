@@ -1,6 +1,9 @@
+'use client';
+
 import { Link } from '@/i18n/navigation';
 import { URLS } from '@/lib/constants';
 import React from 'react';
+import { AddToCollectionButton } from '@/components/collections';
 
 export interface Shloka {
   sanskrit: string;
@@ -30,6 +33,7 @@ export const ShlokaList: React.FC<ShlokaListProps> = ({ shlokas }) => {
           <Link href={URLS.SHLOKA(shlokaNumber)} className='shloka-link'>
             {getFirstLine(shloka.sanskrit)}
           </Link>
+          <AddToCollectionButton shlokaId={shlokaNumber} />
         </div>
       ))}
     </div>
@@ -37,3 +41,4 @@ export const ShlokaList: React.FC<ShlokaListProps> = ({ shlokas }) => {
 };
 
 export default ShlokaList;
+

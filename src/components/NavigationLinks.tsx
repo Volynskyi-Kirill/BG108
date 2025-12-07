@@ -4,7 +4,10 @@ import { useTranslations } from 'next-intl';
 import { Link, usePathname } from '@/i18n/navigation';
 import { URLS } from '@/lib/constants';
 
-const NAV_LINKS = [{ key: 'about', href: URLS.ABOUT }];
+const NAV_LINKS = [
+  { key: 'profile', href: URLS.PROFILE },
+  { key: 'about', href: URLS.ABOUT },
+];
 
 export default function NavigationLinks() {
   const t = useTranslations('Navigation');
