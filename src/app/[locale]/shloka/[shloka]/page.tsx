@@ -5,6 +5,7 @@ import WordByWordSection from './word-by-word-section';
 import { getShlokasByLocale } from '@/lib/get-shlokas-by-locale';
 import { getShlokaNavigation } from '@/lib/shloka-navigation';
 import ShlokaNavigation from '@/components/ShlokaNavigation';
+import { ShlokaActions } from './shloka-actions';
 
 //TODO localization!
 
@@ -35,15 +36,18 @@ export default async function ShlokaPage({ params }: Props) {
 
   return (
     <div className='container mx-auto px-4 py-8 max-w-4xl'>
-      {/* Навигация между стихами */}
-      {/* <div className='mb-6'>
+      <div className='mb-4'>
         <ShlokaNavigation
           previousShloka={navigation.previousShloka}
           nextShloka={navigation.nextShloka}
           currentIndex={navigation.currentIndex}
           totalCount={navigation.totalCount}
         />
-      </div> */}
+      </div>
+
+      <div className='mb-6'>
+        <ShlokaActions shlokaId={shloka} />
+      </div>
 
       <Card className='w-full'>
         <CardHeader className='text-center pb-6'>
@@ -81,16 +85,6 @@ export default async function ShlokaPage({ params }: Props) {
           </div>
         </CardContent>
       </Card>
-
-      {/* Навигация в конце страницы */}
-      <div className='mt-6'>
-        <ShlokaNavigation
-          previousShloka={navigation.previousShloka}
-          nextShloka={navigation.nextShloka}
-          currentIndex={navigation.currentIndex}
-          totalCount={navigation.totalCount}
-        />
-      </div>
     </div>
   );
 }

@@ -3,7 +3,8 @@
     "title": "Hello world!"
   },
   "Navigation": {
-    "about": "About the App"
+    "about": "About the App",
+    "profile": "Profile"
   },
   "LocaleLayout": {
     "title": "BG 108"
@@ -29,5 +30,36 @@
   },
   "Logo": {
     "text": "BG 108"
+  },
+  "Profile": {
+    "title": "Profile",
+    "description": "Your poem collections",
+    "myCollections": "My Collections"
+  },
+  "Collections": {
+    "addToCollection": "Add to collection",
+    "selectCollection": "Select collection",
+    "createCollection": "Create collection",
+    "newCollectionPlaceholder": "Collection name",
+    "create": "Create",
+    "cancel": "Cancel",
+    "loading": "Loading...",
+    "noCollections": "No collections",
+    "noCollectionsHint": "Add verses to collections from the verse page",
+    "shlokaCount": "{count, plural, =0 {Empty} =1 {1 verse} other {# verses}}",
+    "collectionNotFound": "Collection not found",
+    "backToProfile": "Back to profile",
+    "emptyCollection": "Collection is empty",
+    "emptyCollectionHint": "Add verses from the home page or verse page",
+    "viewShloka": "View →",
+    "shlokaLabel": "Shloka",
+    "translation": "Translation",
+    "shlokaNotFound": "Shloka not found",
+    "inCollection": "In collection",
+    "defaultCollections": {
+      "favorites": "Favorites",
+      "learning": "Learning",
+      "learned": "Learned"
+    }
   }
 }
