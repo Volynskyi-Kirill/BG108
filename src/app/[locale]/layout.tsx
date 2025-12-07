@@ -9,6 +9,8 @@ import Container from '@/components/Container';
 import Navigation from '@/components/Navigation';
 import LocaleSwitcher from '@/components/LocaleSwitcher';
 import { ThemeModeToggle } from '@/components/theme-mode-toggle';
+import MobileNavigation from '@/components/MobileNavigation';
+import Logo from '@/components/Logo';
 
 type Props = {
   children: ReactNode;
@@ -56,14 +58,24 @@ export default async function LocaleLayout({
             <header className='border-b'>
               <Container>
                 <div className='flex justify-between items-center'>
-                  <Navigation />
+                  <div className='hidden md:block'>
+                    <Navigation />
+                  </div>
+                  
+                  <div className='md:hidden'>
+                    <Logo />
+                  </div>
+                  
+                  <div className='hidden md:flex items-center gap-4'></div>
                   <div
-                    className='flex items-center gap-4'
+                    className='hidden md:flex items-center gap-4'
                     aria-label='Site preferences'
                   >
                     <LocaleSwitcher aria-label='Change language' />
                     <ThemeModeToggle aria-label='Toggle theme' />
                   </div>
+                  
+                  <MobileNavigation />
                 </div>
               </Container>
             </header>
